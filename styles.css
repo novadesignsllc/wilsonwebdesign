@@ -614,7 +614,7 @@ a.nav-begin {
 }
 
 /* ---- FAQ ---- */
-.faq { padding: 100px 0; }
+.faq { padding: 48px 0 100px; }
 
 .faq-grid {
   display: grid;
