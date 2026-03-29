@@ -980,10 +980,26 @@ a.nav-begin {
 }
 
 @media (max-width: 600px) {
-  /* Nav — smaller pill, tighter text */
-  .nav { top: 12px; }
-  .nav-pill { padding: 4px; gap: 2px; }
-  .nav-pill a { font-size: 11px; padding: 6px 10px; }
+  /* Nav — bottom bar on mobile */
+  .nav {
+    top: auto;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: none;
+    opacity: 1;
+  }
+  .nav-pill {
+    padding: 6px 8px;
+    gap: 2px;
+    background: rgba(8, 8, 18, 0.75);
+    border: 1px solid rgba(255, 255, 255, 0.14);
+    box-shadow:
+      0 -4px 24px rgba(0,0,0,0.4),
+      0 8px 32px rgba(0,0,0,0.5),
+      inset 0 1px 0 rgba(255,255,255,0.12);
+  }
+  .nav-pill a { font-size: 12px; padding: 7px 14px; }
 
   /* Testimonials — 2 rows, smaller cards */
   .testimonials { padding: 48px 0 40px; }
