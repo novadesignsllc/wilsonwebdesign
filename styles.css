@@ -1030,13 +1030,8 @@ a.nav-begin {
   .faq-grid { grid-template-columns: 1fr; }
 
   /* Contact */
-  .footer { padding: 100px 20px 100px; }
-  .footer-cta { max-width: 100%; }
-  .footer-cta-heading { font-size: clamp(72px, 18vw, 110px); margin-bottom: 32px; }
-  .footer-form { gap: 14px; }
+  .footer { padding: 160px 16px 140px; }
   .footer-form-row { flex-direction: column; }
-  .footer-input, .footer-select { font-size: 16px; padding: 16px 20px; }
-  .footer-submit { padding: 18px; font-size: 16px; }
 
   /* Footer bar */
   .footer-inner { grid-template-columns: 1fr; }
