@@ -973,10 +973,30 @@ a.nav-begin {
 }
 
 @media (max-width: 600px) {
+  /* Nav — smaller pill, tighter text */
+  .nav { top: 12px; }
+  .nav-pill { padding: 4px; gap: 2px; }
+  .nav-pill a { font-size: 11px; padding: 6px 10px; }
+
+  /* Hero */
+  .hero-logo-nova { letter-spacing: 0.18em; }
+
+  /* Work */
   .work-grid { grid-template-columns: 1fr; }
   .work-card--large { grid-column: span 1; }
+
+  /* Pricing */
+  .pricing-two-col { flex-direction: column; align-items: center; }
+  .pricing-block { width: 100%; max-width: 100%; padding: 32px 20px; }
+
+  /* FAQ */
+  .faq-grid { grid-template-columns: 1fr; }
+
+  /* Contact */
+  .footer { padding: 100px 16px 60px; }
+  .footer-form-row { flex-direction: column; }
+
+  /* Footer bar */
   .footer-inner { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; align-items: flex-start; }
-  .hero-logo-nova { letter-spacing: 0.18em; }
-  .pricing-block { padding: 36px 24px; }
 }
