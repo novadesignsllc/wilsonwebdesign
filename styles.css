@@ -1030,8 +1030,8 @@ a.nav-begin {
   .faq-item h4 { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 0; }
   .faq-item h4::after { content: '+'; font-size: 20px; font-weight: 300; color: var(--text-dim); flex-shrink: 0; transition: transform 0.25s; }
   .faq-item.open h4::after { transform: rotate(45deg); }
-  .faq-item p { max-height: 0; overflow: hidden; transition: max-height 0.35s ease, margin-top 0.25s ease; margin-top: 0; }
-  .faq-item.open p { max-height: 300px; margin-top: 12px; }
+  .faq-item p { height: 0; overflow: hidden; transition: height 0.35s cubic-bezier(0.22, 1, 0.36, 1), margin-top 0.35s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.3s ease; margin-top: 0; opacity: 0; }
+  .faq-item.open p { margin-top: 12px; opacity: 1; }
 
   /* Contact */
   .footer { padding: 160px 16px 140px; }
