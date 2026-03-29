@@ -1,15 +1,12 @@
-// Aurora shader (minhxthanh) — layered on top of hero
+// Aurora shader (minhxthanh) — runs on hero and contact
 
-window.addEventListener('load', function () {
-  const hero = document.querySelector('.hero');
-  if (!hero) return;
-
+function initColorsShader(container, canvasId) {
   const canvas = document.createElement('canvas');
-  canvas.id = 'hero-shader-2';
-  hero.appendChild(canvas);
+  canvas.id = canvasId;
+  container.appendChild(canvas);
 
   const gl = canvas.getContext('webgl');
-  if (!gl) { console.error('shader2: no webgl'); return; }
+  if (!gl) { console.error('ColorsShader: no webgl'); return; }
 
   const vertSrc = `
     attribute vec2 aPosition;
@@ -96,7 +93,7 @@ window.addEventListener('load', function () {
     gl.shaderSource(shader, src);
     gl.compileShader(shader);
     if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
-      console.error('shader2 compile error:', gl.getShaderInfoLog(shader));
+      console.error('ColorsShader compile error:', gl.getShaderInfoLog(shader));
       return null;
     }
     return shader;
@@ -111,7 +108,7 @@ window.addEventListener('load', function () {
   gl.attachShader(program, frag);
   gl.linkProgram(program);
   if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
-    console.error('shader2 link error:', gl.getProgramInfoLog(program));
+    console.error('ColorsShader link error:', gl.getProgramInfoLog(program));
     return;
   }
   gl.useProgram(program);
@@ -127,11 +124,11 @@ window.addEventListener('load', function () {
   const uTime = gl.getUniformLocation(program, 'iTime');
   const uRes  = gl.getUniformLocation(program, 'iResolution');
 
-  const SCALE = 0.5; // render at half resolution — aurora is soft, barely noticeable
+  const SCALE = 0.5;
 
   function resize() {
-    const w = Math.floor(window.innerWidth  * SCALE);
-    const h = Math.floor(window.innerHeight * SCALE);
+    const w = Math.floor(container.clientWidth  * SCALE);
+    const h = Math.floor(container.clientHeight * SCALE);
     canvas.width  = w;
     canvas.height = h;
     gl.viewport(0, 0, w, h);
@@ -142,7 +139,7 @@ window.addEventListener('load', function () {
   resize();
 
   const start = performance.now();
-  const INTERVAL = 1000 / 30; // cap at 30fps
+  const INTERVAL = 1000 / 30;
   let lastFrame = 0;
   function render(now) {
     requestAnimationFrame(render);
@@ -152,4 +149,12 @@ window.addEventListener('load', function () {
     gl.drawArrays(gl.TRIANGLES, 0, 6);
   }
   requestAnimationFrame(render);
+}
+
+window.addEventListener('load', function () {
+  const hero = document.querySelector('.hero');
+  if (hero) initColorsShader(hero, 'hero-shader-2');
+
+  const contact = document.querySelector('#contact');
+  if (contact) initColorsShader(contact, 'contact-shader-2');
 });

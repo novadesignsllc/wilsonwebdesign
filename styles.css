@@ -665,6 +665,15 @@ a.nav-begin {
   pointer-events: none;
 }
 
+#stars-contact {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 #contact-shader-1 {
   position: absolute;
   inset: 0;
@@ -675,13 +684,14 @@ a.nav-begin {
   opacity: 0.75;
 }
 
-#stars-contact {
+#contact-shader-2 {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 0;
+  z-index: 2;
   pointer-events: none;
+  opacity: 0.5;
 }
 
 #footer-shader-canvas {
@@ -696,7 +706,7 @@ a.nav-begin {
 
 .footer-cta {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   width: 100%;
   max-width: 600px;
   margin: 0 auto 80px;
@@ -835,7 +845,7 @@ a.nav-begin {
 
 .footer-bottom {
   position: relative;
-  z-index: 2;
+  z-index: 10;
   display: flex;
   justify-content: space-between;
   align-items: center;
