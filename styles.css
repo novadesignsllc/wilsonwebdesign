@@ -930,6 +930,10 @@ a.nav-begin {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
+@keyframes heroFadeScroll {
+  from { opacity: 0; transform: translateX(-50%) translateY(24px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
 
 .nav {
   animation: navDrop 1.4s cubic-bezier(0.22, 1, 0.36, 1) both;
@@ -940,7 +944,7 @@ a.nav-begin {
   animation: heroFade 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 .hero-scroll {
-  animation: heroFade 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation: heroFadeScroll 1.8s cubic-bezier(0.22, 1, 0.36, 1) both;
   animation-delay: 0.4s;
 }
 
