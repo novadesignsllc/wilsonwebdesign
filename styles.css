@@ -163,7 +163,7 @@ a.nav-begin {
   height: 100%;
   z-index: 0;
   pointer-events: none;
-  opacity: 0.75;
+  animation: shaderFadeHero75 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
 }
 
 #hero-shader-2 {
@@ -173,7 +173,28 @@ a.nav-begin {
   height: 100%;
   z-index: 1;
   pointer-events: none;
-  opacity: 0.5;
+  opacity: 0;
+  animation: shaderFadeHero50 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.2s;
+}
+
+#stars-hero {
+  opacity: 0;
+  animation: shaderFadeHero1 2.4s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  animation-delay: 0.1s;
+}
+
+@keyframes shaderFadeHero75 {
+  from { opacity: 0; }
+  to   { opacity: 0.75; }
+}
+@keyframes shaderFadeHero50 {
+  from { opacity: 0; }
+  to   { opacity: 0.5; }
+}
+@keyframes shaderFadeHero1 {
+  from { opacity: 0; }
+  to   { opacity: 1; }
 }
 
 /* ---- HERO ---- */
@@ -388,40 +409,40 @@ a.nav-begin {
   overflow: hidden;
 }
 
-.pricing-glow-1 {
-  position: absolute;
-  width: 700px; height: 700px;
-  background: radial-gradient(circle, #7c3aed 0%, transparent 70%);
-  bottom: -200px; left: 50%;
-  transform: translateX(-50%);
-  border-radius: 50%;
-  filter: blur(140px);
-  opacity: 0.2;
-  pointer-events: none;
-}
+.pricing-glow-1 { display: none; }
 
 .pricing .section-title { margin-bottom: 56px; }
 
 .pricing-two-col {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 24px;
   text-align: left;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .pricing-block {
-  background: var(--bg-card);
+  width: 340px;
+  flex-shrink: 0;
   border: 1px solid var(--border-lt);
   border-radius: var(--radius);
   padding: 48px 40px;
   display: flex;
   flex-direction: column;
   gap: 32px;
-}
-.pricing-block--management {
+  /* Website Build gets the bright gradient */
   background: linear-gradient(145deg, #14142e, #180e40);
   border-color: rgba(124,58,237,0.4);
   box-shadow: 0 0 60px rgba(124,58,237,0.15);
+}
+
+.pricing-block--management {
+  /* Management gets the plain card style */
+  background: var(--bg-card);
+  border-color: var(--border-lt);
+  box-shadow: none;
+  padding: 32px 32px;
+  gap: 20px;
 }
 
 .pricing-block-tag {
@@ -485,22 +506,11 @@ a.nav-begin {
   background: rgba(124,58,237,0.08);
   border-color: rgba(124,58,237,0.3);
 }
-.mgmt-tier--featured {
-  background: rgba(124,58,237,0.12);
-  border-color: rgba(124,58,237,0.4);
-}
-
 .mgmt-tier-name {
   font-family: 'Volkhov', serif;
   font-weight: 700;
   font-size: 16px;
   color: var(--text);
-}
-.mgmt-tier--featured .mgmt-tier-name {
-  background: linear-gradient(135deg, var(--purple-lt), #93b4fb);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
 }
 .mgmt-tier-desc {
   font-size: 14px;
@@ -902,6 +912,28 @@ a.nav-begin {
 }
 
 /* ---- ANIMATIONS ---- */
+@keyframes navDrop {
+  from { opacity: 0; transform: translateX(-50%) translateY(-32px); }
+  to   { opacity: 1; transform: translateX(-50%) translateY(0); }
+}
+@keyframes heroFade {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.nav {
+  animation: navDrop 1s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.9s;
+}
+
+.hero-inner {
+  animation: heroFade 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+.hero-scroll {
+  animation: heroFade 1.2s cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 0.3s;
+}
+
 .fade-up {
   opacity: 0;
   transform: translateY(28px);
@@ -909,12 +941,22 @@ a.nav-begin {
 }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 
+/* Section-level fade-in */
+.section-fade {
+  opacity: 0;
+  transform: translateY(36px);
+  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.section-fade.visible { opacity: 1; transform: translateY(0); }
+
 
 /* ---- RESPONSIVE ---- */
 @media (max-width: 900px) {
   .work-grid { grid-template-columns: repeat(2, 1fr); }
   .work-card--large { grid-column: span 2; }
-  .pricing-two-col { grid-template-columns: 1fr; }
+  .pricing-two-col { flex-direction: column; align-items: center; }
+  .pricing-block { width: 100%; max-width: 420px; }
   .testimonial-grid { grid-template-columns: 1fr; }
   .testimonial-card--featured { transform: scale(1); }
   .faq-grid { grid-template-columns: 1fr; }
