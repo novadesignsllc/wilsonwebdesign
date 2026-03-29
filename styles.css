@@ -688,8 +688,10 @@ a.nav-begin {
 .footer-cta {
   position: relative;
   z-index: 2;
-  max-width: 480px;
+  width: 100%;
+  max-width: 600px;
   margin: 0 auto 80px;
+  text-align: center;
 }
 
 .footer-cta-heading {
@@ -698,6 +700,7 @@ a.nav-begin {
   line-height: 1;
   letter-spacing: 0.05em;
   white-space: nowrap;
+  display: block;
   background: linear-gradient(to right, #8b3cf7, #5b50f0, #93b4fb);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
