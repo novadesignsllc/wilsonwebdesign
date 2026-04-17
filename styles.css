@@ -907,7 +907,7 @@ a.nav-begin {
   position: relative;
   z-index: 10;
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   flex-wrap: nowrap;
   gap: 12px;
