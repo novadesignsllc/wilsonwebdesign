@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Wilson Web Design and Hosting</title>
+  <meta name="description" content="Custom websites built to launch and convert. Wilson Web Design and Hosting." />
+  <meta property="og:title" content="Wilson Web Design and Hosting" />
+  <meta property="og:description" content="Custom websites built to launch and convert." />
+  <meta property="og:image" content="preview.png" />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:image" content="preview.png" />
+  <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Ms+Madi&family=Volkhov:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css?v=24" />
+
+  <!-- SVG grain filter for logo -->
+  <svg width="0" height="0" style="position:absolute">
+    <defs>
+      <filter id="grain" x="0%" y="0%" width="100%" height="100%">
+        <feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch" result="noise"/>
+        <feColorMatrix type="saturate" values="0" in="noise" result="grayNoise"/>
+        <feBlend in="SourceGraphic" in2="grayNoise" mode="overlay" result="blend"/>
+        <feComposite in="blend" in2="SourceGraphic" operator="in"/>
+      </filter>
+    </defs>
+  </svg>
+</head>
+<body>
+
+  <!-- NAV BAR -->
+  <div class="nav-bar">
+    <img src="nobackground.svg" class="nav-bar-logo" alt="Wilson Web Design and Hosting" />
+    <a href="#contact" class="btn btn-primary nav-book-btn">Book</a>
+  </div>
+
+  <!-- NAV PILL (sibling, independently positioned) -->
+  <nav class="nav">
+    <ul class="nav-pill">
+      <li><a href="#testimonials">Clients</a></li>
+      <li><a href="#faq">FAQ</a></li>
+      <li><a href="#contact">Start</a></li>
+    </ul>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow hero-glow-1"></div>
+    <div class="hero-glow hero-glow-2"></div>
+    <div class="hero-glow hero-glow-3"></div>
+    <div class="hero-inner">
+      <h1 class="hero-heading">Beautifully Designed Websites Built To Convert More For Your Business</h1>
+      <a href="#contact" class="btn btn-primary hero-cta">Get Started</a>
+    </div>
+  </section>
+
+  <!-- HIGHLIGHTS TICKER -->
+  <section class="highlights-ticker" id="testimonials">
+    <div class="highlights-track-wrap">
+      <div class="highlights-track">
+        <span class="highlight-item">More Traffic</span>
+        <span class="highlight-sep">·</span>
+        <span class="highlight-item">SEO</span>
+        <span class="highlight-sep">·</span>
+        <span class="highlight-item">Responsive</span>
+        <span class="highlight-sep">·</span>
+        <span class="highlight-item">Mobile</span>
+        <span class="highlight-sep">·</span>
+        <span class="highlight-item">Hosting</span>
+        <span class="highlight-sep">·</span>
+        <span class="highlight-item">Management</span>
+        <span class="highlight-sep">·</span>
+      </div>
+    </div>
+  </section>
+
+  <!--
+  <section class="testimonials" id="testimonials-old">
+    <div class="carousel-track-wrap">
+      <div class="carousel-track" id="carouselTrack">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"We'd been limping along with a site we built ourselves years ago. Wilson completely transformed it — now we actually get calls from Google searches. Game changer."</p>
+          <div class="testimonial-author">Sarah M. (Riverstone Bistro)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I was losing business to competitors with better websites. Wilson fixed mine in two weeks and within a month I had more leads than I knew what to do with. Worth every penny."</p>
+          <div class="testimonial-author">Marcus T. (Peak Home Services)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Professional, fast, and they actually explained everything in plain English. My online store went from zero to profitable in 30 days. Wilson is the real deal."</p>
+          <div class="testimonial-author">Jenna K. (Bloom Candle Co.)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Wilson rebuilt our entire site in under three weeks. The difference was night and day — clean, fast, and our phone started ringing almost immediately after launch."</p>
+          <div class="testimonial-author">Derek L. (Clearview Plumbing)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I didn't think a website could make such a difference for a small bakery. Wilson proved me wrong — we're booked out two weeks in advance now."</p>
+          <div class="testimonial-author">Maria C. (Sugarcraft Bakery)</div>
+        </div>
+      </div>
+    </div>
+    <div class="carousel-track-wrap carousel-track-wrap--row2">
+      <div class="carousel-track carousel-track--reverse" id="carouselTrack2">
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Wilson rebuilt our entire site in under three weeks. The difference was night and day — clean, fast, and our phone started ringing almost immediately after launch."</p>
+          <div class="testimonial-author">Derek L. (Clearview Plumbing)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I didn't think a website could make such a difference for a small bakery. Wilson proved me wrong — we're booked out two weeks in advance now."</p>
+          <div class="testimonial-author">Maria C. (Sugarcraft Bakery)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"We'd been limping along with a site we built ourselves years ago. Wilson completely transformed it — now we actually get calls from Google searches. Game changer."</p>
+          <div class="testimonial-author">Sarah M. (Riverstone Bistro)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"Professional, fast, and they actually explained everything in plain English. My online store went from zero to profitable in 30 days. Wilson is the real deal."</p>
+          <div class="testimonial-author">Jenna K. (Bloom Candle Co.)</div>
+        </div>
+        <div class="testimonial-card">
+          <div class="stars">★★★★★</div>
+          <p>"I was losing business to competitors with better websites. Wilson fixed mine in two weeks and within a month I had more leads than I knew what to do with. Worth every penny."</p>
+          <div class="testimonial-author">Marcus T. (Peak Home Services)</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- WORK / PORTFOLIO (temporarily removed)
+  <section class="work" id="work">
+    <div class="work-glow work-glow-1"></div>
+    <div class="container">
+      <div class="work-grid">
+        <div class="work-card">
+          <div class="work-img work-img-1"></div>
+        </div>
+        <div class="work-card">
+          <div class="work-img work-img-2"></div>
+        </div>
+        <div class="work-card">
+          <div class="work-img work-img-3"></div>
+        </div>
+        <div class="work-card">
+          <div class="work-img work-img-4"></div>
+        </div>
+        <div class="work-card">
+          <div class="work-img work-img-5"></div>
+        </div>
+        <div class="work-card work-card--cta">
+          <div class="work-cta-inner">
+            <p>and more...</p>
+            <a href="#" class="btn btn-outline">See All Work</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  -->
+
+  <!-- BENEFITS -->
+  <section class="benefits" id="pricing">
+    <div class="container">
+      <div class="benefits-grid">
+
+        <div class="benefit-card">
+          <div class="benefit-number">01</div>
+          <h3 class="benefit-title">More Traffic</h3>
+          <p class="benefit-body">A professionally built website ranks higher on Google and gets found by people actively searching for what you offer — turning search results into steady, reliable inbound traffic.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-number">02</div>
+          <h3 class="benefit-title">Real Results</h3>
+          <p class="benefit-body">Every page is designed with one goal: getting visitors to take action. Clean layouts, compelling copy, and fast load times work together to turn clicks into calls and form fills.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-number">03</div>
+          <h3 class="benefit-title">More Profits</h3>
+          <p class="benefit-body">More traffic means more leads. More leads means more clients. More clients means more revenue — a website that actually works pays for itself many times over.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq" id="faq">
+    <div class="container">
+      <div class="faq-grid">
+        <div class="faq-item">
+          <h4>How long does a new website take?</h4>
+          <p>1 to 2 weeks on average, but it depends on the project.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do I need to provide content and images?</h4>
+          <p>Not required — but you can provide any content whether that be text, images, logos, etc. that you want included.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What platform do you build on?</h4>
+          <p>Hard-coded HTML, CSS &amp; JS, Claude Code, Framer, Shopify, and more depending on what fits your project best.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Will I be able to update my own site?</h4>
+          <p>Most sites need a complete rebuild and the current site isn't worth touching — but you can absolutely transfer your own domain. Otherwise I'll help you get a new one and link it to the new site.</p>
+        </div>
+        <div class="faq-item">
+          <h4>What if I don't love the design?</h4>
+          <p>I build you a demo site. If you don't like it — no harm no foul. If you do, we move forward.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you offer payment plans?</h4>
+          <p>50% upfront once you approve the project, and 50% once the final site is delivered.</p>
+        </div>
+        <div class="faq-item">
+          <h4>Do you only work with certain industries?</h4>
+          <p>Not necessarily. Send us a message below and we will reach out!</p>
+        </div>
+        <div class="faq-item">
+          <h4>What happens after launch?</h4>
+          <p>The website is yours. Your domain is yours. If you choose, you can have me manage it for a small monthly fee. Send us a message below and we can figure out what works best for your business!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section class="footer" id="contact">
+    <div class="contact-inner">
+
+      <div class="contact-header">
+        <span class="contact-label">Book a Call</span>
+        <h2 class="footer-cta-heading">Let's Connect</h2>
+      </div>
+
+      <div class="contact-divider"></div>
+
+      <div data-fs-success class="footer-success">
+        <p>We'll be in touch soon!</p>
+      </div>
+
+      <form class="footer-form" id="footer-form">
+        <div data-fs-error class="footer-fs-error"></div>
+
+        <div class="form-grid">
+          <div class="form-field">
+            <label class="form-label">Name</label>
+            <input type="text" class="footer-input" placeholder="Your name" name="name" data-fs-field required />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Cell Phone</label>
+            <input type="tel" class="footer-input" placeholder="+1 (000) 000-0000" name="phone" data-fs-field required />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Email</label>
+            <input type="email" class="footer-input" placeholder="you@example.com" name="email" data-fs-field required />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Business Name</label>
+            <input type="text" class="footer-input" placeholder="Your business" name="business" data-fs-field required />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Industry</label>
+            <input type="text" class="footer-input" placeholder="e.g. Landscaping, Plumbing..." name="industry" data-fs-field required />
+          </div>
+          <div class="form-field">
+            <label class="form-label">Budget</label>
+            <div class="budget-options">
+              <button type="button" class="budget-btn" data-value="$1000">$1,000</button>
+              <button type="button" class="budget-btn" data-value="$1500">$1,500</button>
+              <button type="button" class="budget-btn" data-value="$2000">$2,000</button>
+              <button type="button" class="budget-btn" data-value="$2500+">$2,500+</button>
+            </div>
+            <input type="hidden" name="budget" id="budget-input" />
+          </div>
+        </div>
+
+        <div class="form-field form-field--full">
+          <label class="form-label">Message <span class="form-label-optional">(optional)</span></label>
+          <textarea class="footer-input footer-textarea" placeholder="Tell us about your project or goals..." name="message" data-fs-field rows="3"></textarea>
+        </div>
+
+        <div class="form-actions">
+          <button type="submit" class="btn btn-primary footer-submit" data-fs-submit-btn>Submit</button>
+        </div>
+      </form>
+
+      <script>
+        window.formspree = window.formspree || function () { (formspree.q = formspree.q || []).push(arguments); };
+        formspree('initForm', { formElement: '#footer-form', formId: 'xvzdknzp' });
+      </script>
+      <script src="https://unpkg.com/@formspree/ajax@1" defer></script>
+
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Wilson Web Design and Hosting. All rights reserved.</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+  <script src="stars.js"></script>
+  <script src="Shooting.js"></script>
+  <script src="ColorsShader.js"></script>
+</body>
+</html>
